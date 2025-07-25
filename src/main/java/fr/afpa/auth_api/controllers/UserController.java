@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.afpa.auth_api.entities.User;
 import fr.afpa.auth_api.services.UserService;
 
-@RequestMapping("/user")
+@RequestMapping("/users")
 @RestController
 public class UserController {
     private final UserService userService;
@@ -30,7 +30,7 @@ public class UserController {
         return ResponseEntity.ok(currentUser);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<User>> allUsers() {
         List<User> users = userService.allUsers();
 
